@@ -11,6 +11,7 @@ import {
   ListItemSecondaryAction,
   Paper 
 } from '@mui/material';
+import '../styles/Suggestions.css';
 
 // Mock data for suggestions
 const suggestedUsers = [
@@ -48,7 +49,6 @@ const Suggestions = () => {
   return (
     <Paper 
       sx={{ 
-
         p: 2,
         maxWidth: 300,
         backgroundColor: '#fff',
@@ -127,4 +127,4 @@ const Suggestions = () => {
   );
 };
 
-export default Compon_Suggestions;
+export default Suggestions;

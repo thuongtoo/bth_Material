@@ -1,7 +1,7 @@
 import { Grid, Box } from '@mui/material';
-import Suggestions from './Suggestions';
+import Suggestions from '../components/Suggestions';
 
-const Layout = () => {
+const SuggestionsLayout = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
@@ -21,4 +21,4 @@ const Layout = () => {
   );
 };
 
-export default Layout_Suggestions;
+export default SuggestionsLayout;
