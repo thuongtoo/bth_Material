@@ -13,7 +13,7 @@ import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutline
 import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
 import { Box } from "@mui/material";
 
-export default function Post() {
+export default function Post({ caption, img, like, comment, view, share }) {
   return (
     <Card sx={{ maxWidth: "100%", bgcolor: "#16181C", borderRadius: "25px" }}>
       <CardHeader
@@ -49,16 +49,14 @@ export default function Post() {
             variant="body2"
             sx={{ maxWidth: "480px", color: "#f5f5f5" }}
           >
-            This impressive paella is a perfect party dish and a fun meal to
-            cook together with your guests. Add 1 cup of frozen peas along with
-            the mussels, if you like.
+            {caption}
           </Typography>
         </CardContent>
         <Box sx={{ padding: "0 16px" }}>
           <CardMedia
             component="img"
             height="auto"
-            image="https://images.unsplash.com/photo-1742268350523-70a032f3520d?q=80&w=1968&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            image={img}
             alt="Paella dish"
             sx={{ borderRadius: "25px" }}
           />
@@ -71,7 +69,7 @@ export default function Post() {
               />
             </IconButton>
             <Typography variant="body2" color="#808080">
-              184K
+              {like}K
             </Typography>
           </Box>
           <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -81,7 +79,7 @@ export default function Post() {
               />
             </IconButton>
             <Typography variant="body2" color="#808080">
-              10K
+              {comment}K
             </Typography>
           </Box>
           <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -91,7 +89,7 @@ export default function Post() {
               />
             </IconButton>
             <Typography variant="body2" color="#808080">
-              2.2M
+              {view}M
             </Typography>
           </Box>
           <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -99,7 +97,7 @@ export default function Post() {
               <ShareOutlinedIcon sx={{ fontSize: "20px", color: "#808080" }} />
             </IconButton>
             <Typography variant="body2" color="#808080">
-              24K
+              {share}K
             </Typography>
           </Box>
         </CardActions>
