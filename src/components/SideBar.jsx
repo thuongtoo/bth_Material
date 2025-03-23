@@ -15,8 +15,8 @@ function Sidebar() {
   return (
     <Box
       sx={{
-        backgroundColor: "#fff",
-        borderRadius: "8px",
+        backgroundColor: "#16181c",
+        borderRadius: "25px",
         boxShadow: "0 4px 10px rgba(0, 0, 0, 0.1)",
         padding: "16px",
         width: "100%",
@@ -41,7 +41,7 @@ function Sidebar() {
           ),
           style: {
             backgroundColor: "#f4f4f4",
-            borderRadius: "8px",
+            borderRadius: "25px",
           }
         }}
         sx={{
@@ -56,7 +56,7 @@ function Sidebar() {
 
       {/* Danh sách người liên hệ gần đây */}
       <Box sx={{}}>
-        <Typography variant="h6" sx={{ fontWeight: "bold", marginBottom: "8px", marginTop: '20px', color: 'rgba(0, 0, 0, 0.6)' }}>
+        <Typography variant="h6" sx={{ fontWeight: "bold", marginBottom: "8px", marginTop: '20px', color: '#f5f5f5' }}>
           Người liên hệ gần đây
         </Typography>
         <List>
@@ -65,15 +65,20 @@ function Sidebar() {
               <ListItemAvatar>
                 <Avatar alt={contact.name} src={contact.avatar} />
               </ListItemAvatar>
-              <ListItemText sx={{ color: 'rgba(0, 0, 0, 0.6)' }}
+              <ListItemText
+                sx={{
+                  "& .MuiTypography-root": {
+                    color: "#f5f5f5"
+                  }
+                }}
                 primary={contact.name}
                 secondary={contact.username}
               />
             </ListItem>
           ))}
         </List>
-        <Box textAlign="center" sx={{ marginTop: "8px" }}>
-          <Link href="#" sx={{ color: "green", fontWeight: "bold" }}>
+        <Box sx={{ marginTop: "8px" }}>
+          <Link href="#" sx={{ color: "#6ec207", fontWeight: "bold", textDecoration: "none" }}>
             Xem thêm
           </Link>
         </Box>
