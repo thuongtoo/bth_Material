@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
@@ -9,11 +10,24 @@ import Typography from "@mui/material/Typography";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
 import { Box } from "@mui/material";
 
 export default function Post({ caption, img, like, comment, view, share }) {
+  const [likes, setLikes] = useState(like);
+  const [isLiked, setIsLiked] = useState(false);
+
+  const handleLike = () => {
+    if (isLiked) {
+      setLikes((prevLikes) => prevLikes - 1);
+    } else {
+      setLikes((prevLikes) => prevLikes + 1);
+    }
+    setIsLiked(!isLiked);
+  };
+
   return (
     <Card sx={{ maxWidth: "100%", bgcolor: "#16181C", borderRadius: "25px" }}>
       <CardHeader
@@ -63,13 +77,19 @@ export default function Post({ caption, img, like, comment, view, share }) {
         </Box>
         <CardActions disableSpacing sx={{ display: "flex", gap: "60px" }}>
           <Box sx={{ display: "flex", alignItems: "center" }}>
-            <IconButton aria-label="add to favorites">
-              <FavoriteBorderOutlinedIcon
-                sx={{ fontSize: "20px", color: "#808080" }}
-              />
+            <IconButton aria-label="add to favorites" onClick={handleLike}>
+              {isLiked ? (
+                <FavoriteIcon
+                  sx={{ fontSize: "20px", color: "#FF0000" }}
+                />
+              ) : (
+                <FavoriteBorderOutlinedIcon
+                  sx={{ fontSize: "20px", color: "#808080" }}
+                />
+              )}
             </IconButton>
             <Typography variant="body2" color="#808080">
-              {like}K
+              {likes}K
             </Typography>
           </Box>
           <Box sx={{ display: "flex", alignItems: "center" }}>
