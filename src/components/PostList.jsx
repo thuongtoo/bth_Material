@@ -56,14 +56,13 @@ export const PostList = () => {
   return (
     <Box
       maxWidth={"600px"}
-      sx={{ display: "flex", flexDirection: "column", gap: "20px" }}
+      sx={{ display: "flex", flexDirection: "column", gap: "20px", marginLeft: "auto", marginRight: "auto" }}
     >
       <Box
         sx={{
           width: "100%",
           bgcolor: "#16181C",
           borderRadius: "50px",
-          marginTop: "20px",
           padding: "16px",
         }}
       >
