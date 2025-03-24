@@ -56,7 +56,13 @@ export const PostList = () => {
   return (
     <Box
       maxWidth={"600px"}
-      sx={{ display: "flex", flexDirection: "column", gap: "20px", marginLeft: "auto", marginRight: "auto" }}
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "20px",
+        marginLeft: "auto",
+        marginRight: "auto",
+      }}
     >
       <Box
         sx={{
@@ -101,7 +107,8 @@ export const PostList = () => {
       </Box>
 
       <Dialog open={open} onClose={handleClose}>
-        <Box sx={{bgcolor: "#16181c", borderRadius: "25px", width: "400px"}}
+        <Box
+          sx={{ backgroundColor: "#16181c", width: "400px" }}
           component="form"
         >
           <DialogTitle color="#f5f5f5">Create new</DialogTitle>
@@ -111,8 +118,27 @@ export const PostList = () => {
               name="content"
               fullWidth
               multiline
-              rows={4}
-              sx={{ marginTop: "16px" }}
+              rows={3}
+              sx={{
+                marginTop: "16px",
+                "& .MuiInputBase-root": {
+                  color: "#f5f5f5", // Text color
+                },
+                "& .MuiInputLabel-root": {
+                  color: "#808080", // Label color
+                },
+                "& .MuiOutlinedInput-root": {
+                  "& fieldset": {
+                    borderColor: "#808080", // Border color
+                  },
+                  "&:hover fieldset": {
+                    borderColor: "#f5f5f5", // Hover border color
+                  },
+                  "&.Mui-focused fieldset": {
+                    borderColor: "#f5f5f5", // Focused border color
+                  },
+                },
+              }}
             />
           </DialogContent>
           <DialogActions>

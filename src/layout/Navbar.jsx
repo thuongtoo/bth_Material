@@ -26,10 +26,17 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="fixed" sx={{ bgcolor: '#16181c', minHeight: 60 }}>
+    <AppBar
+      position="fixed"
+      sx={{
+        bgcolor: '#16181c',
+        minHeight: 60,
+        borderRadius: 0 // Remove corner rounding
+      }}
+    >
       <Toolbar sx={{ justifyContent: 'space-between' }}>
         {/* Logo Section */}
-        <IconButton  edge="start" color="inherit" aria-label="logo" sx={{ mr: 2 }}>
+        <IconButton edge="start" color="inherit" aria-label="logo" sx={{ mr: 2 }}>
           <BoltIcon sx={{ color: '#6ec207', fontSize: 30 }} />
         </IconButton>
 
@@ -41,12 +48,12 @@ const Navbar = () => {
             '& .MuiTabs-indicator': {
               backgroundColor: '#6ec207',
               height: 3,
-              borderRadius: "4px"
+              borderRadius: '4px'
             },
-            maxWidth: "100%",
-            marginLeft: "auto",
-            marginRight: "auto",
-            paddingLeft: "100px"
+            maxWidth: '100%',
+            marginLeft: 'auto',
+            marginRight: 'auto',
+            paddingLeft: '100px'
           }}
         >
           <Tab
