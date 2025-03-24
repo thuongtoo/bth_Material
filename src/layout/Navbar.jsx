@@ -36,9 +36,7 @@ const Navbar = () => {
     >
       <Toolbar sx={{ justifyContent: 'space-between' }}>
         {/* Logo Section */}
-        <IconButton edge="start" color="inherit" aria-label="logo" sx={{ mr: 2 }}>
-          <BoltIcon sx={{ color: '#6ec207', fontSize: 30 }} />
-        </IconButton>
+        <Box component="img" src='src/assets/Logo.svg'/>
 
         {/* Navigation Tabs Section */}
         <Tabs
