@@ -6,18 +6,20 @@ import Suggestions from "../components/Suggestions";
 
 export const Home = () => {
   return (
-    <Container maxWidth="xl" sx={{marginTop: "80px", marginBottom: "40px"}}>
-      <Grid2 container>
-        <Grid2 size={{md:3}}>
-          <Sidebar />
+    <>
+      <Container maxWidth="xl" sx={{ marginTop: "80px", marginBottom: "40px" }}>
+        <Grid2 container>
+          <Grid2 size={{ md: 3 }}>
+            <Sidebar />
+          </Grid2>
+          <Grid2 size={{ md: 6 }}>
+            <PostList />
+          </Grid2>
+          <Grid2 size={{ md: 3 }}>
+            <Suggestions />
+          </Grid2>
         </Grid2>
-        <Grid2 size={{md:6}}>
-          <PostList />
-        </Grid2>
-        <Grid2 size={{md:3}}>
-          <Suggestions />
-        </Grid2>
-      </Grid2>
-    </Container>
+      </Container>
+    </>
   );
 };
