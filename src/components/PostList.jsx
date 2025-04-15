@@ -6,7 +6,6 @@ import {
   Dialog,
   DialogTitle,
   DialogContent,
-  DialogContentText,
   TextField,
   DialogActions,
 } from "@mui/material";
@@ -45,6 +44,7 @@ const postItem = [
 
 export const PostList = () => {
   const [open, setOpen] = useState(false);
+
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -89,6 +89,7 @@ export const PostList = () => {
               color="#808080"
               fontWeight={"600"}
               onClick={handleClickOpen}
+              sx={{ cursor: "pointer" }}
             >
               Bắt đầu nimbus...
             </Typography>
@@ -99,6 +100,7 @@ export const PostList = () => {
               backgroundColor: "#6EC207",
               color: "#f5f5f5",
               borderRadius: "25px",
+              textTransform: "none",
             }}
           >
             Đăng
@@ -122,45 +124,53 @@ export const PostList = () => {
               sx={{
                 marginTop: "16px",
                 "& .MuiInputBase-root": {
-                  color: "#f5f5f5", // Text color
+                  color: "#f5f5f5",
                 },
                 "& .MuiInputLabel-root": {
-                  color: "#808080", // Label color
+                  color: "#808080",
                 },
                 "& .MuiOutlinedInput-root": {
                   "& fieldset": {
-                    borderColor: "#808080", // Border color
+                    borderColor: "#808080",
                   },
                   "&:hover fieldset": {
-                    borderColor: "#f5f5f5", // Hover border color
+                    borderColor: "#f5f5f5",
                   },
                   "&.Mui-focused fieldset": {
-                    borderColor: "#f5f5f5", // Focused border color
+                    borderColor: "#f5f5f5",
                   },
                 },
               }}
             />
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleClose}>Cancel</Button>
-            <Button type="submit">Post</Button>
+            <Button
+              onClick={handleClose}
+              sx={{ color: "#f5f5f5", textTransform: "none" }}
+            >
+              Cancel
+            </Button>
+            <Button
+              type="submit"
+              sx={{ color: "#f5f5f5", textTransform: "none" }}
+            >
+              Post
+            </Button>
           </DialogActions>
         </Box>
       </Dialog>
 
-      {postItem.map((item, index) => {
-        return (
-          <Post
-            key={index}
-            caption={item.caption}
-            img={item.img}
-            like={item.like}
-            comment={item.comment}
-            view={item.view}
-            share={item.share}
-          />
-        );
-      })}
+      {postItem.map((item, index) => (
+        <Post
+          key={index}
+          caption={item.caption}
+          img={item.img}
+          like={item.like}
+          comment={item.comment}
+          view={item.view}
+          share={item.share}
+        />
+      ))}
     </Box>
   );
 };
